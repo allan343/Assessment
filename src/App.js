@@ -1,25 +1,36 @@
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    //array that holds all shows
+    students: [],
+  }
+
+  componentDidMount() {
+   
+    fetch(`https://api.hatchways.io/assessment/students`)
+    .then((studentRes) => {
+        if (!studentRes.ok)
+            return studentRes.json().then(e => Promise.reject(e));
+        return (studentRes.json());
+    })
+    .then((students) => {
+        this.setState({ students: students });
+        console.log(students)
+    })
+    .catch(error => {
+    });
 }
 
+render() {
+  return (
+<div>
+  Hello World
+</div>
+    
+)
+  }
+}
 export default App;
