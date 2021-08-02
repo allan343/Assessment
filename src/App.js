@@ -19,7 +19,7 @@ class App extends Component {
     })
     .then((students) => {
         this.setState({ students: students });
-        console.log(students)
+        //console.log(students)
     })
     .catch(error => {
     });

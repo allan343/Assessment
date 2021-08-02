@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Student from './Student/Student';
+import Student from '../Student/Student';
 //import './SchoolClassList.css';
 
 class StudentList extends Component {
@@ -14,12 +14,13 @@ class StudentList extends Component {
   }
 
   render() {
-
-    const { students } = this.props;
-   
+ 
+ const {students} = this.props;
+   console.log(students);
     return (
         <div className="studenList">
         <ul className='StudentList__list' aria-live='polite'>
+            
           {students.map(student =>
 
             <li key={student.id} >
