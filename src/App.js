@@ -18,10 +18,11 @@ class App extends Component {
         return (studentRes.json());
     })
     .then((students) => {
-        this.setState({ students: students });
-        //console.log(students)
+        this.setState({ students: students.students });
+       console.log("studentsobject",students.students)
+        console.log("studentlistarray",this.state.students)
     })
-    .catch(error => {
+    .catch(error => {console.log("error",error);
     });
 }
 

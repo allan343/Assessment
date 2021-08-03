@@ -9,14 +9,12 @@ class StudentList extends Component {
   
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
  
- const {students} = this.props;
-   console.log(students);
+ const {students}=this.props;
+
+
+  
     return (
         <div className="studenList">
         <ul className='StudentList__list' aria-live='polite'>
