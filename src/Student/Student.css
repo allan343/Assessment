@@ -1,8 +1,18 @@
 .StudentItem__row{
     background-color:white;
+    border-top:1px solid #dbd7d7;
+    border-bottom: 1px solid #dbd7d7;
 }
-.studentInfo,.studentPic{
-    margin-top:20px;
+.studentInfo{
+    margin-top:5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-family: 'Raleway';font-size: 16px;
+}
+
+.studentPic{
+    margin-top:5px;
     margin-left: 20px;
     margin-bottom: 20px;
     display: inline-block;
@@ -10,6 +20,6 @@
 .Pic {
    
     border-radius: 50%;
-   width:100px;
+   width:120px;
    border:1px solid black;
 }
