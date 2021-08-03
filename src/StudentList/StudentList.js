@@ -38,7 +38,7 @@ class StudentList extends Component {
 
     return (
       <div className="studentList">
-        <input type="text" className="folder__control" placeholder=""
+        <input type="text" className="folder__control" placeholder="Search By Name"
           name="name" id="name" value={this.state.name.value} onChange={e => this.updateName(e.target.value)} />
         <ul className='StudentList__list' aria-live='polite'>
 
