@@ -6,6 +6,11 @@
     overflow-y: auto;
 }
 
+.nameFilter{
+    margin-left: 40px;
+    margin-top: 10px;
+    width:100%;
+}
 .StudentList__list {
     list-style-type: none;
     border-radius: 25px;
