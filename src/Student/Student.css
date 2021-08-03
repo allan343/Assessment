@@ -1,8 +1,14 @@
 .StudentItem__row{
     background-color:white;
 }
+.studentInfo,.studentPic{
+    margin-top:20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
 .Pic {
-    float:left;
+   
     border-radius: 50%;
    width:100px;
    border:1px solid black;
