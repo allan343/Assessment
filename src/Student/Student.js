@@ -1,5 +1,5 @@
 import React from 'react';
-//import './SchoolClassItem.css';
+import './Student.css';
 
 export default function SchoolClassItem(props) {
   let student = props
@@ -16,7 +16,7 @@ export default function SchoolClassItem(props) {
 
   return (
     <div className='StudentItem__row'>
-      {<div className="studentPic"> <img src={student.pic} alt="Logo" /></div>}
+      {<div className="studentPic"> <img className="Pic" src={student.pic} alt="Logo" /></div>}
       {<div className="studentName"> {student.firstName + " " + student.lastName}</div>}
       {<div className="email"> <span id="item-content">{"Email: " + student.email}</span></div>}
       {<div className="company"> <span id="item-content">{"Company: " + student.company}</span></div>}

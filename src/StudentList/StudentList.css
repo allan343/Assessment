@@ -1,0 +1,9 @@
+.studentList{
+    width:70%;
+margin-left: auto;
+margin-right:auto;
+}
+
+.StudentList__list{
+    list-style-type:none
+}

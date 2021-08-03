@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Student from '../Student/Student';
-//import './SchoolClassList.css';
+import './StudentList.css';
 
 class StudentList extends Component {
   
@@ -16,7 +16,7 @@ class StudentList extends Component {
 
   
     return (
-        <div className="studenList">
+        <div className="studentList">
         <ul className='StudentList__list' aria-live='polite'>
             
           {students.map(student =>
