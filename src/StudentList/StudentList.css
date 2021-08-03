@@ -2,8 +2,11 @@
     width:70%;
 margin-left: auto;
 margin-right:auto;
+overflow-x: hidden;
+overflow-y: auto;
 }
 
 .StudentList__list{
-    list-style-type:none
+    list-style-type:none;
+    border-radius: 25px;
 }
