@@ -14,4 +14,5 @@
 .StudentList__list {
     list-style-type: none;
     border-radius: 25px;
+    margin-top: 0;
 }

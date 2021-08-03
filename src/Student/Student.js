@@ -5,6 +5,8 @@ export default function SchoolClassItem(props) {
   let student = props
   let grades = student.grades;
 
+ 
+
   let gradesCumulative = 0;
   let gradeCount = 0;
   grades.map(grade => {
@@ -33,12 +35,14 @@ const onClick = () => setShowText(!showText);
       <div className="studentNameAndInfo">
         {<div className="studentName"> <h1>{student.firstName + " " + student.lastName}</h1></div>}
         <div className="studentInfo">
+          <div className="Info">
           {<div className="email"> <span id="item-content">{"Email: " + student.email}</span></div>}
           {<div className="company"> <span id="item-content">{"Company: " + student.company}</span></div>}
           {<div className="skill"> <span id="item-content">{"Skill: " + student.skill}</span></div>}
           {<div className="average"> <span id="item-content">{"Average: " + average}</span></div>}
           {showText} <button className="gradesToggle" onClick={onClick}>Click me</button>
           {showText ? <GradesText /> : null}
+          </div>
         </div>
       </div>
     </div>
