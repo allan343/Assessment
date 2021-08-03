@@ -37,7 +37,7 @@ const onClick = () => setShowText(!showText);
           {<div className="company"> <span id="item-content">{"Company: " + student.company}</span></div>}
           {<div className="skill"> <span id="item-content">{"Skill: " + student.skill}</span></div>}
           {<div className="average"> <span id="item-content">{"Average: " + average}</span></div>}
-          {showText} <button onClick={onClick}>Click me</button>
+          {showText} <button className="gradesToggle" onClick={onClick}>Click me</button>
           {showText ? <GradesText /> : null}
         </div>
       </div>
