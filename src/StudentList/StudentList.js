@@ -51,7 +51,7 @@ class StudentList extends Component {
         <input type="text" className="nameFilter" placeholder="Search By Name"
           name="name" id="name" value={this.state.name.value} onChange={e => this.updateName(e.target.value)} />
            <input type="text" className="tagFilter" placeholder="Search By Tag"
-          name="name" id="name" value={this.state.tag.value} onChange={e => this.updateName(e.target.value)} />
+          name="name" id="name" value={this.state.tag.value} onChange={e => this.updateTag(e.target.value)} />
         <ul className='StudentList__list' aria-live='polite'>
 
           {filteredStudents.map(student =>

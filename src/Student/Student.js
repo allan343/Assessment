@@ -19,10 +19,10 @@ class Student extends Component {
   handleAddTag = (tagName) => {
     const newTags = [
       ...this.state.tags,
-      { name: tagName}
+        tagName
     ]
     this.setState({
-      shoppingItems: newTags
+      tags: newTags
     })
   }
   render() {

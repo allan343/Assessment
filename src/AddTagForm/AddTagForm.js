@@ -9,14 +9,19 @@ export default class AddItemForm extends React.Component {
   onSubmitForm = (e) => {
     e.preventDefault()
     // e.target['inputName'] references `<input name='inputName' />`
+    console.log("tagNameonsubmit",e.target.itemToAdd.value);
     this.props.onAddTag(e.target.itemToAdd.value)
   }
+  /*
   updateTag(tagName) {
+    //console.log("tagName",tagName);
     this.setState({ tagName: { value: tagName, touched: true } });
-  }
+  }*/
 
   render() {
     let { tags } = this.props
+    if(tags.length)
+    console.log("tag in map",tags[0].name)
     return (
       <div>
       <form onSubmit={this.onSubmitForm}>
@@ -32,8 +37,8 @@ export default class AddItemForm extends React.Component {
         <div className="tagList">
 
           {tags.map(tag =>
-
-            <span>tag</span>
+          
+            <span>{tag}</span>
           )}
 
         </div>
