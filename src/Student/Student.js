@@ -37,14 +37,16 @@ const enterTag=() =>{
     <div className='StudentItem__row'>
       {<div className="studentPic"> <img className="Pic" src={student.pic} alt="Logo" /></div>}
       <div className="studentNameAndInfo">
-        {<div className="studentName"> <h1>{student.firstName + " " + student.lastName}</h1></div>}
+        {<div className="studentName"> <h1>{student.firstName + " " + student.lastName}</h1>
+        <button className="gradesToggle" onClick={onClick}>Click me</button>
+        </div>}
         <div className="studentInfo">
           <div className="Info">
           {<div className="email"> <span id="item-content">{"Email: " + student.email}</span></div>}
           {<div className="company"> <span id="item-content">{"Company: " + student.company}</span></div>}
           {<div className="skill"> <span id="item-content">{"Skill: " + student.skill}</span></div>}
           {<div className="average"> <span id="item-content">{"Average: " + average}</span></div>}
-          {showText} <button className="gradesToggle" onClick={onClick}>Click me</button>
+          {showText} 
           {showText ? <GradesText /> : null}
           </div>
           <div>

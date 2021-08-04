@@ -16,7 +16,9 @@
 }
 
 .gradesToggle{
-    float:right;
+    position: absolute;
+    top: 35px;
+    right: 20px;
 }
 .studentInfo {
     margin-left: 20px;
