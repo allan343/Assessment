@@ -6,6 +6,20 @@ export default class AddItemForm extends React.Component {
   static defaultProps = {
     tags: []
   };
+  constructor(props) {
+    //states a homework can have
+    super(props);
+  this.state = {
+    homeworkdescription: {
+      value: '',
+      touched: false
+    }
+  }
+}
+  updateTag(tagName) {
+    this.setState({ tagName: { value: tagName, touched: true } });
+  }
+
   render() {
     let { tags } = this.props
     return (
@@ -15,6 +29,7 @@ export default class AddItemForm extends React.Component {
             type='text'
             placeholder='Add Tag'
             aria-label='Shopping list item'
+            onChange={e => this.updateDescription(e.target.value)}
           />
           
           <button
