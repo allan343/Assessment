@@ -6,16 +6,11 @@ export default class AddItemForm extends React.Component {
   static defaultProps = {
     tags: []
   };
-  constructor(props) {
-    //states a homework can have
-    super(props);
-  this.state = {
-    homeworkdescription: {
-      value: '',
-      touched: false
-    }
+  onSubmitForm = (e) => {
+    e.preventDefault()
+    // e.target['inputName'] references `<input name='inputName' />`
+    this.props.onAddTag(e.target.itemToAdd.value)
   }
-}
   updateTag(tagName) {
     this.setState({ tagName: { value: tagName, touched: true } });
   }
@@ -24,20 +19,15 @@ export default class AddItemForm extends React.Component {
     let { tags } = this.props
     return (
       <div>
-        <form>
-          <input
-            type='text'
-            placeholder='Add Tag'
-            aria-label='Shopping list item'
-            onChange={e => this.updateDescription(e.target.value)}
-          />
-          
-          <button
-            onClick={() => this.props.handleAddTag()}
-            type='button'>
-            Add Tag
-          </button>
-        </form>
+      <form onSubmit={this.onSubmitForm}>
+        <input
+          name='itemToAdd'
+          type='text'
+          placeholder='Add Tag'
+          aria-label='tag item'
+        />
+        <button type='submit'>Add Tag</button>
+      </form>
 
         <div className="tagList">
 
