@@ -65,7 +65,9 @@ class Student extends Component {
                 className={this.state.showGrades ? GradesText : null}
               ></div>
               <div className="addTagSection">
-              <AddTagForm/>
+              <AddTagForm
+              tags ={this.state.tags}
+              onAddTag={this.handleAddTag}/>
               </div>
             </div>
           </div>
