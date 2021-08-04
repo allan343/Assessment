@@ -17,6 +17,10 @@ export default function SchoolClassItem(props) {
   let average = gradesCumulative / gradeCount;
   let [showText, setShowText] = useState(false);
 const onClick = () => setShowText(!showText);
+/*
+const enterTag=() =>{
+  
+}*/
   let GradesText= ()=>
   <div>
   {<div className="testScore"><span id="test-details-label"> Test1:</span> <span id="item-content"> {grades[0]}</span></div>}
@@ -43,6 +47,11 @@ const onClick = () => setShowText(!showText);
           {showText} <button className="gradesToggle" onClick={onClick}>Click me</button>
           {showText ? <GradesText /> : null}
           </div>
+          <div>
+         {/* <input type="text" className="tagFilter" placeholder="Entertag"
+          name="tags" id="tags"  />
+         { <button className="tagButton" onClick={}>Enter tag</button>*/}
+            </div>
         </div>
       </div>
     </div>
