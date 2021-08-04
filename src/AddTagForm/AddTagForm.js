@@ -1,9 +1,15 @@
 import React from "react";
 
 export default class AddItemForm extends React.Component {
+
+  
+  static defaultProps = {
+    tags: []
+  };
   render() {
-   
+    let {tags} = this.props
     return (
+      <div>
       <form>
         <input
           type='text'
@@ -12,6 +18,18 @@ export default class AddItemForm extends React.Component {
         />
         <button type='submit'>Add Tag</button>
       </form>
+
+      <div className="tagList">
+      
+          {tags.map(tag =>
+
+            <span>tag</span>
+          )}
+      
+      </div>
+      </div>
+
+      
     )
   }
 }
