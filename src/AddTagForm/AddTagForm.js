@@ -20,8 +20,7 @@ export default class AddItemForm extends React.Component {
 
   render() {
     let { tags } = this.props
-    if(tags.length)
-    console.log("tag in map",tags[0].name)
+
     return (
       <div>
       <form onSubmit={this.onSubmitForm}>
@@ -38,7 +37,7 @@ export default class AddItemForm extends React.Component {
 
           {tags.map(tag =>
           
-            <span>{tag}</span>
+            <span key={tag}>{tag} </span>
           )}
 
         </div>
