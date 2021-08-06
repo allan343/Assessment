@@ -66,6 +66,7 @@ class Student extends Component {
               ></div>
               <div className="addTagSection">
               <AddTagForm
+              id={this.props.id}
               tags ={this.state.tags}
               onAddTag={this.handleAddTag}/>
               </div>

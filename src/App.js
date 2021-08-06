@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import StudentList from './StudentList/StudentList';
 
 class App extends Component {
   state = {
     //array that holds all shows
-    students: [],
+    students: []
   }
 
   componentDidMount() {
@@ -28,11 +27,13 @@ class App extends Component {
   }
 
   render() {
+
     return (
+     
       <div>
         <StudentList students={this.state.students} ></StudentList>
       </div>
-
+     
     )
   }
 }
