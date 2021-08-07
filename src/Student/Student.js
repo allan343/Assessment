@@ -8,11 +8,13 @@ class Student extends Component {
     super(props);
     this.state = {
       tags: [],
-      showGrades: false
+      showGrades: false,
+      isOff: false
     };
   }
 
   ToggleGrades() {
+    this.setState({isOff:!this.state.isOff});
     this.setState({ showGrades: !this.state.showGrades });
   }
 
@@ -30,6 +32,7 @@ class Student extends Component {
     let grades = student.grades;
     let gradesCumulative = 0;
     let gradeCount = 0;
+    let title=this.state.isOff? "+":"-";
     grades.map(grade => {
       gradesCumulative += parseInt(grade);
       gradeCount++;
@@ -59,7 +62,7 @@ class Student extends Component {
               {<div className="company"> <span id="item-content">{"Company: " + student.company}</span></div>}
               {<div className="skill"> <span id="item-content">{"Skill: " + student.skill}</span></div>}
               {<div className="average"> <span id="item-content">{"Average: " + average}</span></div>}
-              {<button className="gradesToggle" onClick={() => this.ToggleGrades()}>Click me</button>}
+              {<button className="gradesToggle" onClick={() => this.ToggleGrades()}>{title}</button>}
               {this.state.showGrades ? GradesText : null}
               <div
                 className={this.state.showGrades ? GradesText : null}
