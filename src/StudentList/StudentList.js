@@ -98,7 +98,6 @@ class StudentList extends Component {
           <input type="text" className="tagFilter" placeholder="Search By Tag"
             name="name" id="name" value={this.state.tagName.value} onChange={e => this.updateTag(e.target.value)} />
           <ul className='StudentList__list' aria-live='polite'>
-            <p>{this.state.tagName.value}</p>
             {filteredStudents.map(student =>
 
               <li key={student.id} >

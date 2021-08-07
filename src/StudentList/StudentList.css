@@ -10,7 +10,13 @@
 
 .nameFilter{
     margin-left: 40px;
-    margin-top: 10px;
+  
+    width:100%;
+}
+
+.tagFilter{
+    margin-left: 40px;
+  
     width:100%;
 }
 .StudentList__list {
