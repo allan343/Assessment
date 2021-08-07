@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import AddTagForm from '../AddTagForm/AddTagForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import './Student.css';
 
 class Student extends Component {
@@ -28,11 +31,13 @@ class Student extends Component {
     })
   }
   render() {
+    const plus = <FontAwesomeIcon icon={faPlus} />
+    const minus = <FontAwesomeIcon icon={faMinus} />
     let student = this.props
     let grades = student.grades;
     let gradesCumulative = 0;
     let gradeCount = 0;
-    let title=this.state.isOff? "+":"-";
+    let title=this.state.isOff? plus:minus;
     grades.map(grade => {
       gradesCumulative += parseInt(grade);
       gradeCount++;
@@ -62,7 +67,7 @@ class Student extends Component {
               {<div className="company"> <span id="item-content">{"Company: " + student.company}</span></div>}
               {<div className="skill"> <span id="item-content">{"Skill: " + student.skill}</span></div>}
               {<div className="average"> <span id="item-content">{"Average: " + average}</span></div>}
-              {<button className="gradesToggle" onClick={() => this.ToggleGrades()}>{title}</button>}
+              {<div className="gradesToggle" onClick={() => this.ToggleGrades()}>{title}</div>}
               {this.state.showGrades ? GradesText : null}
               <div
                 className={this.state.showGrades ? GradesText : null}
