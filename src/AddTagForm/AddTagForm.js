@@ -1,5 +1,7 @@
 import React from "react";
 import ApiContext from '../ApiContext/ApiContext';
+import './AddTagForm.css'
+
 export default class AddItemForm extends React.Component {
   static contextType = ApiContext;
 
@@ -46,7 +48,7 @@ export default class AddItemForm extends React.Component {
 
           {tags.map(tag =>
           
-            <span key={tag}>{tag} </span>
+            <span className="tag" key={tag}>{tag} </span>
           )}
 
         </div>
