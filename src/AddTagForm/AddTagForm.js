@@ -34,16 +34,6 @@ export default class AddItemForm extends React.Component {
 
     return (
       <div>
-      <form onSubmit={this.onSubmitForm}>
-        <input
-          name='itemToAdd'
-          type='text'
-          placeholder='new tag'
-          aria-label='tag item'
-          onKeyPress={this.handleKeypress}
-        />
-      </form>
-
         <div className="tagList">
 
           {tags.map(tag =>
@@ -52,6 +42,15 @@ export default class AddItemForm extends React.Component {
           )}
 
         </div>
+        <form onSubmit={this.onSubmitForm}>
+        <input
+          name='itemToAdd'
+          type='text'
+          placeholder='add a tag'
+          aria-label='tag item'
+          onKeyPress={this.handleKeypress}
+        />
+      </form>
       </div>
 
 
