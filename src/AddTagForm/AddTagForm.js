@@ -36,7 +36,7 @@ export default class AddItemForm extends React.Component {
         <input
           name='itemToAdd'
           type='text'
-          placeholder='Add Tag'
+          placeholder='new tag'
           aria-label='tag item'
           onKeyPress={this.handleKeypress}
         />
