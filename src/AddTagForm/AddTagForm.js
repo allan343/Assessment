@@ -40,7 +40,6 @@ export default class AddItemForm extends React.Component {
           aria-label='tag item'
           onKeyPress={this.handleKeypress}
         />
-       <button type='submit'>Add Tag</button>
       </form>
 
         <div className="tagList">
