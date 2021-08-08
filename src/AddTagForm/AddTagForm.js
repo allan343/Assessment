@@ -13,6 +13,13 @@ export default class AddItemForm extends React.Component {
     this.props.onAddTag(e.target.itemToAdd.value)
     this.context.addTagsToFilter(e.target.itemToAdd.value,this.props.id)
   }
+
+  handleKeypress = e => {
+    //it triggers by pressing the enter key
+  if (e.keyCode === 13) {
+    this.onSubmitForm();
+  }
+};
   /*
   updateTag(tagName) {
     //console.log("tagName",tagName);
@@ -31,8 +38,9 @@ export default class AddItemForm extends React.Component {
           type='text'
           placeholder='Add Tag'
           aria-label='tag item'
+          onKeyPress={this.handleKeypress}
         />
-        <button type='submit'>Add Tag</button>
+       <button type='submit'>Add Tag</button>
       </form>
 
         <div className="tagList">

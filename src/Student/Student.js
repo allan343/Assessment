@@ -37,7 +37,7 @@ class Student extends Component {
     let grades = student.grades;
     let gradesCumulative = 0;
     let gradeCount = 0;
-    let title=this.state.isOff? plus:minus;
+    let title=this.state.isOff? minus:plus;
     grades.map(grade => {
       gradesCumulative += parseInt(grade);
       gradeCount++;
