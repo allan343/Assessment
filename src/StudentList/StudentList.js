@@ -73,16 +73,23 @@ class StudentList extends Component {
 
       for (let i = 0; i < filteredIds.length; i++) {
 
-        idsonly.push(filteredIds[i].id)
+        idsonly.push(Number(filteredIds[i].id))
 
       }
+     
       console.log("idsonly", idsonly)
 
       filteredStudents = students.filter(
         student => {
-          return student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase()) ||
-            student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase()) ||
-            idsonly.includes(student.id)
+          const hasFirstName=student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase())
+          const hasLastName=student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase())
+          console.log("has first name", hasFirstName);
+          console.log("has last name", hasLastName);
+          console.log("idsonly",idsonly,student.id);
+          return hasFirstName||hasLastName||idsonly.includes(student.id);
+          /*student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase()) ||
+            student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase()) ||*/
+           //idsonly.includes(student.id)
         })
     }
     const value = {
