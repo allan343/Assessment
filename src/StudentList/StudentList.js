@@ -17,7 +17,8 @@ class StudentList extends Component {
         value: "",
         touched: false
       },
-      tagsToFilter: []
+      tagsToFilter: [],
+      tagsToRender: []
     };
   }
   static defaultProps = {
@@ -29,7 +30,7 @@ class StudentList extends Component {
   }
 
   updateTag(tag) {
-    console.log("tag from input", tag)
+
     this.setState({ tagName: { value: tag, touched: true } });
 
   }
@@ -39,44 +40,56 @@ class StudentList extends Component {
       ...this.state.tagsToFilter,
       {
         "tag": tag,
-        "id": id
+        "id": Number(id)
       }
     ]
     this.setState({
       tagsToFilter: newTags
     })
+    const newTags1 = [
+      ...this.state.tagsToRender,
+      {
+        "id": Number(id),
+        "tag": tag
+
+      }
+    ]
+    this.setState({
+      tagsToRender: newTags1
+    })
   };
 
   getTagsToFilter = () => {
-    console.log("tagstoFilter", this.state.tagsToFilter);
+
     return this.state.tagsToFilter;
   }
 
+  getTagsToRender = () => {
+
+    return this.state.tagsToRender;
+  }
+
   render() {
-    console.log("this.state", this.props.students);
-    console.log("tagstoFilterstate", this.state.tagsToFilter)
+
     const { students } = this.props;
     let filteredStudents = [];
     if (this.state.name.value === "" && this.state.tagName.value === "") {
       filteredStudents = students;
     }
-    else if(this.state.name.value !== ""){
-     
+    else if (this.state.name.value !== "") {
+
 
       filteredStudents = students.filter(
         student => {
-          const hasFirstName= student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase())
-          const hasLastName= student.lastName && student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase())
-          console.log("has first name", hasFirstName);
-          console.log("has last name", hasLastName);
-         // console.log("idsonly",idsonly,student.id);
-          return hasFirstName||hasLastName;
-        
+          const hasFirstName = student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase())
+          const hasLastName = student.lastName && student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase())
+
+          return hasFirstName || hasLastName;
+
         })
     }
 
-    else if(this.state.tagName.value !== "")
-    {
+    else if (this.state.tagName.value !== "") {
       let tagQuery = this.state.tagName.value.toLowerCase();
 
       let filteredIds = this.state.tagsToFilter.filter(function (el) {
@@ -84,7 +97,7 @@ class StudentList extends Component {
       }
 
       );
-      console.log("filteredId's", filteredIds);
+
       let idsonly = []
 
       for (let i = 0; i < filteredIds.length; i++) {
@@ -92,20 +105,21 @@ class StudentList extends Component {
         idsonly.push(Number(filteredIds[i].id))
 
       }
-     
-      console.log("idsonly", idsonly)
+
+
 
       filteredStudents = students.filter(
         student => {
-       
-         // console.log("idsonly",idsonly,student.id);
+
+
           return idsonly.includes(Number(student.id));
-        
+
         })
     }
     const value = {
       addTagsToFilter: this.addTagsToFilter,
-      getTagsToFilter: this.getTagsToFilter
+      getTagsToFilter: this.getTagsToFilter,
+      getTagsToRender: this.getTagsToRender
     }
 
     return (

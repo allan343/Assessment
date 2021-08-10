@@ -10,43 +10,43 @@ export default class AddItemForm extends React.Component {
   };
   onSubmitForm = (e) => {
     e.preventDefault()
-    
-    console.log("tagNameonsubmit",e.target.itemToAdd.value);
+
+
     this.props.onAddTag(e.target.itemToAdd.value)
-    this.context.addTagsToFilter(e.target.itemToAdd.value,this.props.id)
+    this.context.addTagsToFilter(e.target.itemToAdd.value, this.props.id)
   }
 
   handleKeypress = e => {
     //it triggers by pressing the enter key
-  if (e.keyCode === 13) {
-    this.onSubmitForm();
-  }
-};
+    if (e.keyCode === 13) {
+      this.onSubmitForm();
+    }
+  };
 
 
   render() {
     let { tags } = this.props;
-   
+
 
     return (
       <div>
         <div className="tagList">
 
           {tags.map(tag =>
-          
+
             <span className="tag" key={tag}>{tag} </span>
           )}
 
         </div>
         <form onSubmit={this.onSubmitForm}>
-        <input
-          name='itemToAdd'
-          type='text'
-          placeholder='add a tag'
-          aria-label='tag item'
-          onKeyPress={this.handleKeypress}
-        />
-      </form>
+          <input
+            name='itemToAdd'
+            type='text'
+            placeholder='add a tag'
+            aria-label='tag item'
+            onKeyPress={this.handleKeypress}
+          />
+        </form>
       </div>
 
 

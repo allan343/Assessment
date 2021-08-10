@@ -17,14 +17,14 @@ class Student extends Component {
   }
 
   ToggleGrades() {
-    this.setState({isOff:!this.state.isOff});
+    this.setState({ isOff: !this.state.isOff });
     this.setState({ showGrades: !this.state.showGrades });
   }
 
   handleAddTag = (tagName) => {
     const newTags = [
       ...this.state.tags,
-        tagName
+      tagName
     ]
     this.setState({
       tags: newTags
@@ -37,7 +37,7 @@ class Student extends Component {
     let grades = student.grades;
     let gradesCumulative = 0;
     let gradeCount = 0;
-    let title=this.state.isOff? minus:plus;
+    let title = this.state.isOff ? minus : plus;
     grades.map(grade => {
       gradesCumulative += parseInt(grade);
       gradeCount++;
@@ -73,14 +73,14 @@ class Student extends Component {
                 className={this.state.showGrades ? GradesText : null}
               ></div>
               <div className="addTagSection">
-              <AddTagForm
-              id={this.props.id}
-              tags ={this.state.tags}
-              onAddTag={this.handleAddTag}/>
+                <AddTagForm
+                  id={this.props.id}
+                  tags={this.state.tags}
+                  onAddTag={this.handleAddTag} />
               </div>
             </div>
           </div>
-         
+
         </div>
       </div>
     )

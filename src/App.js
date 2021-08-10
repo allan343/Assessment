@@ -18,8 +18,7 @@ class App extends Component {
       })
       .then((students) => {
         this.setState({ students: students.students });
-        console.log("studentsobject", students.students)
-        console.log("studentlistarray", this.state.students)
+
       })
       .catch(error => {
         console.log("error", error);
@@ -29,11 +28,11 @@ class App extends Component {
   render() {
 
     return (
-     
+
       <div>
         <StudentList students={this.state.students} ></StudentList>
       </div>
-     
+
     )
   }
 }
