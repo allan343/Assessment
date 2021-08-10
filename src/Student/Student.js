@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import AddTagForm from '../AddTagForm/AddTagForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import './Student.css';
 
 class Student extends Component {
@@ -31,8 +29,8 @@ class Student extends Component {
     })
   }
   render() {
-    const plus = <FontAwesomeIcon icon={faPlus} />
-    const minus = <FontAwesomeIcon icon={faMinus} />
+    const plus = "+"
+    const minus = "-"
     let student = this.props
     let grades = student.grades;
     let gradesCumulative = 0;
