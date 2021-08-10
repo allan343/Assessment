@@ -86,7 +86,8 @@ class StudentList extends Component {
           console.log("has first name", hasFirstName);
           console.log("has last name", hasLastName);
           console.log("idsonly",idsonly,student.id);
-          return hasFirstName||hasLastName||idsonly.includes(student.id);
+          return hasFirstName||hasLastName||idsonly.includes(Number(student.id));
+         // hasFirstName||hasLastName||idsonly.includes(student.id);
           /*student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase()) ||
             student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase()) ||*/
            //idsonly.includes(student.id)
