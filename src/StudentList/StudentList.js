@@ -60,7 +60,23 @@ class StudentList extends Component {
     if (this.state.name.value === "" && this.state.tagName.value === "") {
       filteredStudents = students;
     }
-    else {
+    else if(this.state.name.value !== ""){
+     
+
+      filteredStudents = students.filter(
+        student => {
+          const hasFirstName= student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase())
+          const hasLastName= student.lastName && student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase())
+          console.log("has first name", hasFirstName);
+          console.log("has last name", hasLastName);
+         // console.log("idsonly",idsonly,student.id);
+          return hasFirstName||hasLastName;
+        
+        })
+    }
+
+    else if(this.state.tagName.value !== "")
+    {
       let tagQuery = this.state.tagName.value.toLowerCase();
 
       let filteredIds = this.state.tagsToFilter.filter(function (el) {
@@ -81,16 +97,10 @@ class StudentList extends Component {
 
       filteredStudents = students.filter(
         student => {
-          const hasFirstName=student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase())
-          const hasLastName=student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase())
-          console.log("has first name", hasFirstName);
-          console.log("has last name", hasLastName);
-          console.log("idsonly",idsonly,student.id);
-          return hasFirstName||hasLastName||idsonly.includes(Number(student.id));
-         // hasFirstName||hasLastName||idsonly.includes(student.id);
-          /*student.firstName.toLowerCase().includes(this.state.name.value.toLowerCase()) ||
-            student.lastName.toLowerCase().includes(this.state.name.value.toLowerCase()) ||*/
-           //idsonly.includes(student.id)
+       
+         // console.log("idsonly",idsonly,student.id);
+          return idsonly.includes(Number(student.id));
+        
         })
     }
     const value = {
